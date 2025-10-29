@@ -1,0 +1,13 @@
+body{
+    background-color: cornflowerblue;
+}
+
+#reset{
+    float: right;
+    color: dimgray;
+    margin-top: 5%;
+}
+
+#submit{
+    margin-top: 5%;
+}
