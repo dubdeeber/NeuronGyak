@@ -11,3 +11,28 @@ body{
 #submit{
     margin-top: 5%;
 }
+
+.inline-input{
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+    padding: 3px;
+    border-radius: 2px;
+}
+.input-icon{
+    margin-right: 5px;
+    display: inline-block;
+}
+.inline-input input{
+    border: none;
+    outline: none;
+    flex-grow: 1;
+    padding: 0;
+}
+
+#reset{
+    margin-top: 2%;
+    padding: 0px;
+    vertical-align: top;
+    color: lightgray;
+}

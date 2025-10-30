@@ -16,12 +16,16 @@ public class SecuredFilter implements Filter {
         HttpServletRequest httpRequest = (HttpServletRequest) servletRequest;
         HttpSession httpSession = httpRequest.getSession();
         HttpServletResponse httpServletResponse = (HttpServletResponse) servletResponse;
-        if(httpSession.getAttribute("authenticated").equals("true")){
-            filterChain.doFilter(servletRequest, servletResponse);
-        }else{
+        try {
+            if (httpSession.getAttribute("authenticated").equals("true")) {
+                filterChain.doFilter(servletRequest, servletResponse);
+            } else {
 
+                httpServletResponse.sendRedirect(httpServletResponse.encodeRedirectURL("/web_war_exploded/login.html"));
+
+            }
+        }catch (Exception ex){
             httpServletResponse.sendRedirect(httpServletResponse.encodeRedirectURL("/web_war_exploded/login.html"));
-
         }
     }
 
